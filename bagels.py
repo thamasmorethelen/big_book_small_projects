@@ -4,4 +4,5 @@
         # if user guesses 412 print pico pico
         # if user guesses a number and it's in the right place print fermi
         # if the user doesn't guess any correct numbers print bagels
-        
+        # users have just 10 guesses before the project quits
+

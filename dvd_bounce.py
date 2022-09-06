@@ -41,9 +41,22 @@ def main():
                         Y: random.randint(1, HEIGHT - 4),
                         DIR: random.choice(DIRECTIONS)}
         )
-        if logos[-1] % 2 == 0:
-            logos[-1] -+ 1
+                        if logos[-1][X] % 2 == 0:
+                            logos[-1][X] -+ 1
     cornerBounces = 0 # counts how many times a logo hits a corner
     while True: # main loop
+        for logo in logos:
+            bext.goto(logo[X], logo[Y])
+            print('    ', end=" ")
 
+            originalDirection = logo[DIR]
 
+            if logo[X] == 0 and logo[Y] == 0:
+                logo[DIR] = DOWN_RIGHT
+                cornerBounces += 1
+            elif logo[X] == 0 and logo[Y] == HEIGHT -1:
+                logo[DIR] = UP_RIGHT
+                cornerBounces += 1
+            elif logo[X] == WIDTH - 3 and logo[Y] == 0:
+                logo[DIR] = DOWN_LEFT
+                cornerBounces += 1
